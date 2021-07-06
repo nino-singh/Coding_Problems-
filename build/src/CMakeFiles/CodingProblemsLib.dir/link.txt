@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libCodingProblemsLib.a CMakeFiles/CodingProblemsLib.dir/main.cpp.o CMakeFiles/CodingProblemsLib.dir/BitHacks.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libCodingProblemsLib.a

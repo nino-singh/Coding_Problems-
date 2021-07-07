@@ -416,8 +416,19 @@ unsigned int numBitsConvertAToB(int A, int B) {
 /* Swap odd and even bits in an integer with as few 
  * instructions as possible. 
  */
-int swapBitsPairwise(int A, int B) {
+int32_t swapBitsPairwise(int32_t num) {
+	//Select all even bits and left shift them by one
+	//so they are in odd bit positions 
+	//Even bits mask 
+	int32_t evenBits = (num & 0x55555555) << 1;
 	
+	//Select all odd bits and right shift them by one so
+	//they are in even bit positions
+	//For right shift, make it logical right shift, bc num could 
+	//be negative. 
+	int32_t oddBits = (int32_t)((uint32_t)(num & 0xaaaaaaaa) >> 1); 
+	
+	return (evenBits | oddBits);
 }
 
 void drawLine(char *screen, int width, int x1, int x2, int y) {

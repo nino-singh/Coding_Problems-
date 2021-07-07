@@ -49,7 +49,7 @@ void printDecToBin(double num, int k_precision);
 int flipBitToWin(int num);
 void printNextNum(int num);
 unsigned int numBitsConvertAToB(int A, int B);
-int swapBitsPairwise(int A, int B);
+int32_t swapBitsPairwise(int32_t num);
 void drawLine(char *screen, int width, int x1, int x2, int y);
 
 /* Related Problems in Chapter 16, Moderate level */

@@ -1,8 +1,10 @@
 # (1) Build a library with my application sources
 set(APP_LIB_SOURCE
 	main.cpp
-	BitHacks.c
-    BitHacks.h
+	ArraysAndStrings/Arrays_Strings.cpp
+	ArraysAndStrings/Arrays_Strings.h
+	BitHacks/BitHacks.c
+	BitHacks/BitHacks.h
 )
 
 add_library(${APP_LIB_NAME} ${APP_LIB_SOURCE})

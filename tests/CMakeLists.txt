@@ -14,7 +14,8 @@ endif()
 set(TEST_APP_NAME ${APP_NAME}_tests)
 set(TEST_SOURCES
     BitHacksTestSuite.cpp
-    main.cpp
+	StringsTestSuite.cpp
+	main.cpp
 )
 
 # (3) Take care of include directories

@@ -1,7 +1,7 @@
 #include "CppUTest/TestHarness.h"
 
 extern "C" {
-#include "BitHacks.h"
+#include "BitHacks/BitHacks.h"
 }
 
 TEST_GROUP(BitHacksTestSuite) {

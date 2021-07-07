@@ -23,7 +23,7 @@ void streamSort(StreamSorter_t* sorter, uint16_t num, uint16_t* sortedOutput);
 //Do binary search to find if target num exists in arr
 bool binSearch(uint16_t *arr, uint16_t arrSize, uint16_t target);
 
-//Butterfly Network interviw question with John Peabody 
+//Butterfly Network interviw question for Embedded Sw Engineer role 
 //Find number of occurrences of integer n, in a sorted array 
 //https://www.geeksforgeeks.org/count-number-of-occurrences-or-frequency-in-a-sorted-array/ 
 //https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/

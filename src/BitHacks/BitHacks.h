@@ -7,6 +7,7 @@ extern "C" {
 
 #include <stdbool.h>
 #include <stdint.h> 
+#include <string.h>
 
 #define SET_BIT(X, N)			((X) |= (1 << (N)))
 #define CLR_BIT(X, N)			((X) &= ~(1 << (N)))
@@ -14,6 +15,7 @@ extern "C" {
 
 #define SIZEOF(X)		((size_t)(&(X) + 1) - ((size_t)&(X))) 
 
+void reverseStr(char*inStr);
 bool isBigEndian(void);
 bool isOdd(int num);
 unsigned int checkParity(int num);
@@ -60,6 +62,10 @@ int negateNum(int a);
 int multiply(int a, int b);
 int subtract(int a, int b);
 int divide(int a, int b);
+
+/*InterviewBit Amazon Bit Manipulation problems */ 
+int singleNumber(const int* arr, int len);
+int singleNumberII(const int*arr, int len);
 
 #ifdef __cplusplus	
 }

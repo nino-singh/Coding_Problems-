@@ -1,6 +1,30 @@
 #include "BitHacks.h"
 #include "stdio.h"
 
+/* Easy warm up problems */
+//Pass in a string and reverse it in place
+void reverseStr(char*inStr) {
+	char *pBegin = inStr; 
+	//Make sure to start end pointer on last char and not on null char
+	char *pEnd = inStr + (strlen(inStr)-1); 
+	char temp = 0; 
+
+	//R e v e r s e \0 
+   // ^           ^
+  // pBegin	      pEnd 
+
+	//Swap characters from outside, work are way inward 
+	//when pBegin is equal to pEnd we've finished
+	while(pBegin < pEnd) {
+		temp = *pEnd; 
+		*pEnd = *pBegin;
+		*pBegin = temp;
+		pBegin++;
+		pEnd--;
+	}
+}
+
+
 /** Easy **/
 //Techie Delight Bit Hacks problems 
 bool isBigEndian(void) {
@@ -442,11 +466,20 @@ int getMaxNum(int a, int b) {
 
 /* Implement operations with only using add operation */
 int negateNum(int a) {
-
+	return ~a+1;
 }
 
 int multiply(int a, int b) {
-	return 0; 
+	unsigned posA = 0;
+
+	if(a < 0) {
+		posA = ~a + 1;
+	}	
+
+	for(int i=0; i<b; i++) {
+		posA+=posA;
+	}
+	negateNum(posA);
 }
 
 int subtract(int a, int b) {
@@ -456,3 +489,31 @@ int subtract(int a, int b) {
 int divide(int a, int b) {
 	return 0;
 }
+
+/*InterviewBit Amazon Bit Manipulation problems */
+//All integers in array appear twice except for one. It appears only once 
+//Find that integer. 
+int singleNumber(const int* arr, int len) {
+	//We can use XOR to find the unique number 
+	//arr = {7 ,3, 4, 3, 5, 6, 5, 6}
+	//XOR properties: num ^ num = 0, num ^ 0 = num
+	//XOR is commutative and associative, so if we were to rearrange numbers
+	//7 ^ ( 3^3 ) ^ (4^4) ^ (5^5) ^ (6^6)
+	//= 7 ^ 0 ^ 0 ^ 0 ^ 0
+	//= 7 ^ 0 = 7
+	int result = arr[0]; 
+
+	for(int i=1; i<len; i++) {
+		result ^=arr[i];
+	}
+	return result; 
+}
+
+
+//All integers in array appear thrice except one. It appears once.
+//Find that integer 
+int singleNumberII(const int*arr, int len)
+{
+	return 0; 
+}
+

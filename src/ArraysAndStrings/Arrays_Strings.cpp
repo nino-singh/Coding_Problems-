@@ -2,7 +2,41 @@
 
 char charMap[256] = {0};
 
+/* Easy warm up problems */
+//Pass in a string and reverse it in place
+void reverseWord(char*inStr) {
+	char *pBegin = inStr; 
+	//Make sure to start end pointer on last char and not on null char
+	char *pEnd = inStr + (strlen(inStr)-1); 
+	char temp = 0; 
+
+	//R e v e r s e \0 
+   // ^           ^
+  // pBegin	      pEnd 
+
+	//Swap characters from outside, work are way inward 
+	//when pBegin is equal to pEnd we've finished
+	while(pBegin < pEnd) {
+		temp = *pEnd; 
+		*pEnd = *pBegin;
+		*pBegin = temp;
+		pBegin++;
+		pEnd--;
+	}
+}
+
+/* InterviewBit Amazon, Strings 
+ * Reverse each word in the string, remove spaces between
+ * words and leading and trailing spaces of the sentence.
+ * */
+
+void reverseString(char* sentence)
+{
+	
+}
+
 /* 
+ * Cracking the Coding Interview, P1.1
  * Check if string has all unique characters.
  */
 bool isUnique(char *str) {
